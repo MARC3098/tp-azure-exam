@@ -1,0 +1,15 @@
+trigger:
+  - main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - script: echo "Pipeline works"
+    displayName: Test pipeline
+
+  - script: |
+      node -v
+      npm -v
+      echo "Azure DevOps is ready"
+    displayName: Check environment
