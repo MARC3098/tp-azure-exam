@@ -3,6 +3,8 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
+ARG BUILD_ID=local
+ENV VITE_BUILD_ID=$BUILD_ID
 RUN npm run build
 
 FROM nginx:alpine AS production-stage
